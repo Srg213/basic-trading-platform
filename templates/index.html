@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+
+
+ <table class= 'table table-striped'>
+     <th>Symbol</th>
+     <th>Name</th>
+     <th>Shares</th>
+     <th>Price</th>
+     <th>Total</th>
+
+{%for i in folio%}
+     <tr scope='row'>
+         <td>{{i.symbol}}</td>
+         <td>{{i.name}}</td>
+         <td>{{i.quantity}}</td>
+         <td>{{i.price}}</td>
+
+         <td>{{i.total}}</td>
+     </tr>
+{%endfor%}
+
+    <tr scope='row'>
+        <td  > CASH</td>
+        <td colspan = 3></td>
+        <td  >{{cash}}</td>
+    </tr>
+    <tr scope ='row'>
+        <td colspan = 4></td>
+        <td >{{total_assets}}</td>
+    </tr>
+ </table>
+
+
+
+{% endblock %}

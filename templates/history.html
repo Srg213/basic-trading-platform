@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+<table class= 'table table-striped'>
+     <th>Symbol</th>
+
+     <th>Shares</th>
+     <th>Price</th>
+     <th>Total</th>
+
+{%for i in folio%}
+     <tr scope='row'>
+         <td>{{i.symbol}}</td>
+         <td>{{i.quantity}}</td>
+         <td>{{i.price}}</td>
+         <td>{{i['transaction time']}}</td>
+     </tr>
+{%endfor%}
+
+ </table>
+
+{% endblock %}
